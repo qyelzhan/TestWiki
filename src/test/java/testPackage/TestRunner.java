@@ -1,4 +1,4 @@
-package testPackage.anotherTests;
+package testPackage;
 
 public class TestRunner {
     /*public static void main(String[] args) {
