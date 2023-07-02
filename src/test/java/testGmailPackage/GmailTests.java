@@ -13,10 +13,8 @@ import static com.codeborne.selenide.Selenide.*;
 public class GmailTests {
     // определяем часто используемые  элементы чтобы не повторяться
     SelenideElement SentMessagesBtn = $(byCssSelector("div[class='TN bzz aHS-bnu']"));
-   // SelenideElement ComposeBtn =$(By.xpath("//body/div[7]/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]"));
     SelenideElement ComposeBtn =$(byCssSelector("div[style='user-select: none']"));
     SelenideElement SendBtn =$(byCssSelector("div[data-tooltip-delay='800']"));
-    //SelenideElement SaveChangesBtn =$(byCssSelector("div[role='navigation']"));
     SelenideElement SaveChangesBtn =$(byXpath("/html[1]/body[1]/div[7]/div[3]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[33]/td[1]/div[1]/button[1]"));
     @BeforeClass
     public void setUp() {
@@ -74,6 +72,7 @@ public class GmailTests {
     }
    // @Test @Order(4)
     public void sendMessageWithSingature(){
+        checkLogining();
         ComposeBtn.click();
         MessageFiller("qyelzhan@gmail.com","Test email","dskj");
         $(byCssSelector("div[class='BP aaA aMZ']")).click();// нажимаем на подписи
@@ -83,6 +82,7 @@ public class GmailTests {
     }
     //@Test @Order(5)
     public void checkSentEmailWithSignature(){
+        checkLogining();
         SentMessagesBtn.click();// заходим в отправленные
         $(By.xpath("//div[span='Test email']")).should(Condition.exist);// проверяем письмо
         WaitOneSec();
