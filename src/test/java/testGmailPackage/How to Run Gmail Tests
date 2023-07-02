@@ -1,0 +1,12 @@
+Подробный видео гайд:https://youtu.be/gVrvosAU0yg
+
+1) Убедиться что у нас установлены след. программы:
+
+JDK 8
+Chrome browser
+ChromeDriver
+Intellij Idea IDE
+
+2) Скачать файлы с репо https://github.com/qyelzhan/TestWiki/blob/main/src/test/java/testGmailPackage/GmailTests.java
+3) Открыть файлы с IDE (src/test/java/testGmailPackage/GmailTests.java)
+4) Запускать тесты в классе GmailTests где находятся метод gmailTestRunner
